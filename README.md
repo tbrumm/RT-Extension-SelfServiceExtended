@@ -1,2 +1,37 @@
-# RT-Extension-SelfServiceExtended
-Extendet Information for RT SelfService
+NAME
+    RT::Extension::SelfServiceExtended - Extended View for RT SelfService
+
+DESCRIPTION
+    This Addon Extends the RT SelfService by a Ticket SideBySide View and
+    a more detailed unpriviledged Users Preferences View and also by an
+    Approval Tab to let also unpriviledged Users process Approvals if they
+    have to (keep RT Rights Setup in Mind)
+
+INSTALLATION
+    perl Makefile.PL
+    make
+    make install
+        May need root permissions
+
+    Edit your /opt/rt4/etc/RT_SiteConfig.pm
+        If you are using RT 4.2 or greater, add this line:
+
+            Plugin('RT::Extension::SelfServiceExtended');
+
+        For RT 4.0, add this line:
+
+            Set(@Plugins, qw(RT::Extension::SelfServiceExtended));
+
+        or add RT::Extension::SelfServiceExtended to your existing @Plugins line.
+
+    Clear your mason cache
+            rm -rf /opt/rt4/var/mason_data/ob
+
+    Restart your webserver
+
+AUTHORS
+    Torsten Brumm http://technik.picturepunxx.de/ <technik@picturepunxx.de>
+
+LICENCE
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
