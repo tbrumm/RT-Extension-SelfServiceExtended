@@ -1,0 +1,15 @@
+<%init>
+# Add a brand new root menu item
+
+my $approval = Menu()->child(
+    'approval', # any unique identifier
+    title => 'Approval',
+);
+
+$approval->child(
+    'Approve',
+    title => 'Approve Request',
+    path  => 'SelfService/Approvals',
+);
+
+</%init>
